@@ -1,4 +1,8 @@
-<table class="table">
+<button (click)="initHero()">Create Hero</button><div class="row">
+
+  <div class="col-9">
+    <h2 class="ms-5 mt-5">List of Heroes</h2>
+  <table class="table table-bordered mt-5 ms-5">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -15,7 +19,10 @@
       <td>{{hero.firstName}}</td>
       <td>{{hero.lastName}}</td>
       <td>{{hero.place}}</td>
-    </tr>
-    
+      <button (click)="updateHero(hero)" *ngIf="hero.id">Edit</button>
+    </tr> 
   </tbody>
 </table>
+</div>
+</div>
+<app-edit-hero [hero]="heroToEdit" (heroesUpdated)="updateHeroList($event)"></app-edit-hero>
