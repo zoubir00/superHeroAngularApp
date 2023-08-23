@@ -1,5 +1,31 @@
-
-<div *ngIf="hero">
+<div class="row ms-5">
+  <div class="col-8">
+<div *ngIf="hero" class="form-group">
+  <h1 class="form-label mt-4">Create Super Hero</h1>
+  <div class="form-floating mb-3">
+    <input [(ngModel)]="hero.name" placeholder="Name" type="text" class="form-control" id="floatingInput" >
+    <label for="floatingInput">Name</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input [(ngModel)]="hero.firstName" placeholder="first name" type="text" class="form-control" id="floatingFName"  autocomplete="off">
+    <label for="floatingFName">First Name</label>
+  </div>
+   <div class="form-floating mb-3">
+    <input [(ngModel)]="hero.lastName" placeholder="last name" type="text" class="form-control" id="floatingLName"  autocomplete="off">
+    <label for="floatingLName">Last Name</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input [(ngModel)]="hero.place" placeholder="Place" type="text" class="form-control" id="floatingPlace"  autocomplete="off">
+    <label for="floatingPlace">Place</label>
+  </div>
+  <div class="form-floating mb-3">
+    <button class="btn btn-outline-info me-2" (click)="updateHero(hero)" *ngIf="hero.id">Edit</button>
+      <button class="btn btn-outline-warning me-2" (click)="DeleteHero(hero)" *ngIf="hero.id">Delete</button>
+      <button style="text-align: center; margin-left: 500px;" class="btn btn-success me-2" (click)="CreateHero(hero)" *ngIf="!hero.id">Create</button>
+  </div>
+  </div>
+</div>
+<!-- <div *ngIf="hero">
     <h2>{{hero.name}}</h2>
     <div>
         Name:
@@ -23,4 +49,4 @@
       <button (click)="CreateHero(hero)" *ngIf="!hero.id">Create</button>
 
     </div>
-</div>
+</div> -->
